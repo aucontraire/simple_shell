@@ -1,38 +1,81 @@
  #include "shell.h"
 
-void get_command(char *user_input)
+int _strlen(char *str)
 {
-	int compare, status, i;
-	pid_t child_pid;
-	char *argv[3];
+	int len;
 
-	status = 1;
-	argv[0] = strtok(user_input, " \n");;
-
-	for (i = 1; argv[i] != NULL; i++)
+	len = 0;
+	while (str[len] != '\0')
 	{
-		argv[i] = strtok(NULL, " \n");
+		len++;
 	}
-	argv[i] = '\0';
+	return (len + 1);
+}
+
+
+int count_args(char *user_input)
+{
+	int args, i;
+
+	args = 1;
+	i = 0;
+	while (user_input[i] != '\0' && user_input[i] != '\n')
+	{
+		if (user_input[i] == ' ')
+			args++;
+		i++;
+	}
+	return (args);
+}
+
+
+void get_command(char *user_input, int args)
+{
+	int compare, status, i, length;
+	pid_t child_pid;
+	char *token;
+	char **argv;
 
 	compare = strncmp("exit", user_input, 4);
 	if (compare == 0)
 	{
-		printf("Exiting...\n");
 		free(user_input);
-		exit(0);
+		exit (0);
 	}
-	else
+
+	length = 0;
+	argv = malloc(sizeof(char *) * (args + 1));
+
+	status = 1;
+
+	token = strtok(user_input, " \n");
+	length = _strlen(token);
+	argv[0] = malloc(sizeof(char) * length);
+	argv[0] = token;
+	token = strtok(NULL, " \n");
+	for (i = 1; token != NULL; i++)
 	{
-		child_pid = fork();
+		length = _strlen(token);
+		argv[i] = malloc(sizeof(char) * length);
+		argv[i] = token;
+		token = strtok(NULL, " \n");
+	}
+
+	argv[i] = '\0';
+
+	child_pid = fork();
 		if (child_pid == 0)
 		{
-			if (execvp(*argv, argv) != 0)
+			if (execvp(argv[0], argv) != 0)
 				perror("./hsh");
+
+			for (i = 0; i < args; i++)
+				free(argv[i]);
+			free(argv);
 		}
 		else
 			wait(&status);
-	}
+
 }
 
 /**
@@ -42,7 +85,7 @@ void get_command(char *user_input)
 
 int main(void)
 {
-	int bytes_read;
+	int bytes_read, args;
 	char *user_input;
 	size_t nbytes;
 
@@ -60,12 +103,11 @@ int main(void)
 		if (bytes_read == -1)
 		{
 			perror("getline\n");
-			free(user_input);
 			break;
 		}
-		get_command(user_input);
-		free(user_input);
+		args = count_args(user_input);
+		get_command(user_input, args);
 	}
-
+	free(user_input);
 	return (0);
 }
