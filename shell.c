@@ -6,7 +6,7 @@
  * Return: 0 always (but program may exit early)
  */
 
-int main(__attribute__((unused)) int agc, __attribute__((unused)) char **agrv, char **env)
+int main(__attribute__((unused)) int argc, __attribute__((unused)) char **argv, char **env)
 {
 	char *user_input;
 	size_t nbytes;
