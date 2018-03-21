@@ -11,6 +11,7 @@
 /* check_helpers */
 void exit_check(char *user_input);
 int blank_check(char *user_input);
+int path_check(char *command);
 
 /* fork_wait_exec */
 void fork_wait_exec(char **commands, char **env);

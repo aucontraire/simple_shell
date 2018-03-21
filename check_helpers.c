@@ -33,3 +33,18 @@ int blank_check(char *user_input)
 
 	return (0);
 }
+
+/**
+ * path_check - checks if command contains path
+ * @command: string to check for slash which denotes path
+ *
+ * Return: 0 if success, -1 if failure
+ */
+
+int path_check(char *command)
+{
+	if (command[0] == '/')
+		return (0);
+
+	return (-1);
+}
