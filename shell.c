@@ -1,67 +1,10 @@
 #include "shell.h"
 
-void fork_wait_exec(char **commands)
-{
-	pid_t pid;
-	int status;
-
-	status = 0;
-	pid = fork();
-
-	if (pid == -1)
-	{
-		perror("fork failure");
-		_exit(1);
-	}
-
-	else if (pid == 0)
-	{
-		if ((execvp(commands[0], commands)) < 0)
-		{
-			perror(commands[0]);
-			_exit(1);
-		}
-		_exit(0);
-
-	}
-
-	wait(&status);
-}
-
-char **parse_input(char *user_input)
-{
-	char **commands;
-	char *token;
-	int args, i, length;
-
-	args = 1;
-	i = 0;
-	while (user_input[i] != '\0' && user_input[i] != '\n')
-	{
-		if (user_input[i] == ' ')
-			args++;
-		i++;
-	}
-
-	commands = malloc(sizeof(char *) * args + 1);
-
-	token = strtok(user_input, "\n ");
-	length = _strlen(token);
-	commands[0] = malloc(sizeof(char) * length);
-	commands[0] = token;
-	token = strtok(NULL, "\n ");
-
-	for (i = 1; i < args; i++)
-	{
-		length = _strlen(token);
-		commands[i] = malloc(sizeof(char) * length);
-		commands[i] = token;
-		token = strtok(NULL, "\n ");
-	}
-	commands[i] = NULL;
-
-	return (commands);
-}
+/**
+ * main - a simple shell program written in C
+ *
+ * Return: 0 always (but program may exit early)
+ */
 
 int main(void)
 {
