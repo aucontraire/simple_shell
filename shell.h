@@ -23,5 +23,5 @@ char **parse_input(char *user_input);
 
 /* string_helpers */
 int _strlen(char *str);
-
+char *_strcat(char *dest, char *src);
 #endif
