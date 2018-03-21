@@ -9,7 +9,7 @@
  * remaining strings are arguments to use with that command
  */
 
-void fork_wait_exec(char **commands)
+void fork_wait_exec(char **commands, char **env)
 {
 	pid_t pid;
 	int status;
@@ -25,7 +25,7 @@ void fork_wait_exec(char **commands)
 
 	else if (pid == 0)
 	{
-		if ((execvp(commands[0], commands)) < 0)
+		if ((execve(commands[0], commands, env)) < 0)
 		{
 			perror(commands[0]);
 			_exit(1);

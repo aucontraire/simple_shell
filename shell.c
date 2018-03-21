@@ -6,7 +6,7 @@
  * Return: 0 always (but program may exit early)
  */
 
-int main(void)
+int main(__attribute__((unused)) int agc, __attribute__((unused)) char **agrv, char **env)
 {
 	char *user_input;
 	size_t nbytes;
@@ -31,7 +31,7 @@ int main(void)
 			continue;
 
 		commands = parse_input(user_input);
-		fork_wait_exec(commands);
+		fork_wait_exec(commands, env);
 
 		free_commands(commands);
 /*

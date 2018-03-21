@@ -13,7 +13,7 @@ void exit_check(char *user_input);
 int blank_check(char *user_input);
 
 /* fork_wait_exec */
-void fork_wait_exec(char **commands);
+void fork_wait_exec(char **commands, char **env);
 
 /* memory_helpers */
 void free_commands(char **commands);
