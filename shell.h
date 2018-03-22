@@ -25,4 +25,9 @@ char **parse_input(char *user_input);
 /* string_helpers */
 int _strlen(char *str);
 char *_strcat(char *dest, char *src);
+
+/* env_helpers */
+int get_path_count(char *path);
+char **get_path_array(char **env);
+
 #endif
