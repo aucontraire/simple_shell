@@ -18,7 +18,8 @@ char **parse_input(char *user_input, char **path_array)
 	i = 0;
 	while (user_input[i] != '\0' && user_input[i] != '\n')
 	{
-		if (user_input[i] == ' ' && user_input[i + 1] != ' ' && user_input[i + 1] != '\n')
+		if (user_input[i] == ' ' && user_input[i + 1] != ' '
+		    && user_input[i + 1] != '\n')
 			args++;
 		i++;
 	}

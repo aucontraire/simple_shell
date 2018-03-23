@@ -9,12 +9,14 @@
  * Return: 0 always (but program may exit early)
  */
 
-int main(__attribute__((unused)) int argc, __attribute__((unused)) char **argv, char **env)
+int main(__attribute__((unused)) int argc, char **argv, char **env)
 {
-	char *user_input;
+	char *user_input, *NAME;
 	size_t nbytes;
 	ssize_t bytes_read;
 	char **commands, **path_array;
+
+	NAME = argv[0];
 
 	nbytes = 0;
 	while (1)
@@ -23,7 +25,7 @@ int main(__attribute__((unused)) int argc, __attribute__((unused)) char **argv, 
 		bytes_read = getline(&user_input, &nbytes, stdin);
 		if (bytes_read == -1)
 		{
-			perror("getline");
+			perror(NAME);
 			break;
 		}
 

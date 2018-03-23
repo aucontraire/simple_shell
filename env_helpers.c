@@ -71,13 +71,14 @@ char **get_path_array(char **env)
 }
 
 /**
- * find_path - find it
+ * find_path - find the PATH of a command
  * @path_array: array of directories in PATH
+ * @command: command to find path for
  *
  * Return: path of command, NULL if it fails
  */
 
-char *find_path(char **path_array, char *token)
+char *find_path(char **path_array, char *command)
 {
 	int i, j, f_ok, dir_len, com_len, total_len;
 	char *path;
@@ -86,7 +87,7 @@ char *find_path(char **path_array, char *token)
 	while (path_array[i] != NULL)
 	{
 		dir_len = _strlen(path_array[i]);
-		com_len = _strlen(token);
+		com_len = _strlen(command);
 		total_len = dir_len + com_len + 2;
 
 		path = malloc(sizeof(char) * total_len);
@@ -102,7 +103,7 @@ char *find_path(char **path_array, char *token)
 		j = 0;
 		while (j < com_len)
 		{
-			path[dir_len + j + 1] = token[j];
+			path[dir_len + j + 1] = command[j];
 			j++;
 		}
 		path[total_len] = '\0';
