@@ -14,10 +14,10 @@ int blank_check(char *user_input);
 int path_check(char *command);
 
 /* fork_wait_exec */
-void fork_wait_exec(char **commands, char **env);
+void fork_wait_exec(char **commands, char **env, char *NAME);
 
 /* memory_helpers */
-void free_commands(char **commands);
+void free_array(char **array);
 
 /* parse_input */
 char **parse_input(char *user_input, char **path_array);

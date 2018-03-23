@@ -51,6 +51,7 @@ char **get_path_array(char **env)
 			if (path_array == NULL)
 				return (NULL);
 
+
 			token = strtok(path, "=:");
 			while (j < path_count)
 			{
@@ -62,10 +63,11 @@ char **get_path_array(char **env)
 				}
 				token = strtok(NULL, "=:");
 			}
-			/* do we have to add NULL string to end of array? */
 		}
 		i++;
 	}
+
+	path_array[path_count] = NULL;
 
 	return (path_array);
 }

@@ -55,9 +55,7 @@ char *_strdup(char *str)
 
 	length = 0;
 	if (str == NULL)
-	{
 		return (NULL);
-	}
 
 	length = _strlen(str);
 
@@ -66,11 +64,9 @@ char *_strdup(char *str)
 		return (NULL);
 
 	for (i = 0; i < length; i++)
-	{
 		arr[i] = str[i];
-	}
-	arr[i] = '\0';
 
+	arr[i] = '\0';
 
 	return (arr);
 }

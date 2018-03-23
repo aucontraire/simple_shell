@@ -11,23 +11,25 @@
 
 int main(__attribute__((unused)) int argc, char **argv, char **env)
 {
-	char *user_input, *NAME;
+	char *user_input;
 	size_t nbytes;
 	ssize_t bytes_read;
 	char **commands, **path_array;
+	static char *NAME;
 
 	NAME = argv[0];
-
+	user_input = NULL;
 	nbytes = 0;
+	commands = NULL;
+	path_array = NULL;
+
 	while (1)
 	{
 		write(STDOUT_FILENO, "$ ", 2);
+
 		bytes_read = getline(&user_input, &nbytes, stdin);
 		if (bytes_read == -1)
-		{
 			perror(NAME);
-			break;
-		}
 
 		if (bytes_read == 5)
 			exit_check(user_input);
@@ -37,14 +39,15 @@ int main(__attribute__((unused)) int argc, char **argv, char **env)
 
 		path_array = get_path_array(env);
 		/* check for NULL path_array */
+
 		commands = parse_input(user_input, path_array);
-		fork_wait_exec(commands, env);
+		fork_wait_exec(commands, env, NAME);
 
-		free_commands(commands);
+		free_array(commands);
 
-		/*free(path_array);*/
-		/*path_array = NULL;*/
-		/*free(user_input);*/
+		free_array(path_array);
+		free(path_array);
+
 	}
 	return (0);
 }

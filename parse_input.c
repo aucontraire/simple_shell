@@ -12,7 +12,7 @@ char **parse_input(char *user_input, char **path_array)
 {
 	char **commands;
 	char *token, *dir_path;
-	int args, i, length;
+	int args, i;
 
 	args = 1;
 	i = 0;
@@ -24,7 +24,7 @@ char **parse_input(char *user_input, char **path_array)
 		i++;
 	}
 
-	commands = malloc(sizeof(char *) * args + 1);
+	commands = malloc(sizeof(char *) * args);
 	token = strtok(user_input, "\n ");
 
 	if (path_check(token) == -1)
@@ -34,19 +34,21 @@ char **parse_input(char *user_input, char **path_array)
 			token = dir_path;
 	}
 
-	length = _strlen(token);
-	commands[0] = malloc(sizeof(char) * length);
-	commands[0] = token;
-	token = strtok(NULL, "\n ");
+/*	length = _strlen(token);
+	commands[0] = malloc(sizeof(char) * (length + 1)); */
+	commands[0] = _strdup(token);
+/*	commands[0][length] = '\0'; */
 
 	for (i = 1; i < args; i++)
 	{
-		length = _strlen(token);
-		commands[i] = malloc(sizeof(char) * length);
-		commands[i] = token;
 		token = strtok(NULL, "\n ");
+/*		length = _strlen(token);
+		commands[i] = malloc(sizeof(char) * (length + 1)); */
+		commands[i] = _strdup(token);
+/*		commands[i][length] = '\0'; */
 	}
-	commands[i] = NULL;
+
+	commands[args] = NULL;
 
 	return (commands);
 }
