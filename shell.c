@@ -2,6 +2,9 @@
 
 /**
  * main - a simple shell program written in C
+ * @argc: number of arguments
+ * @argv: array of arguments
+ * @env: array of environment variables
  *
  * Return: 0 always (but program may exit early)
  */
@@ -11,7 +14,7 @@ int main(__attribute__((unused)) int argc, __attribute__((unused)) char **argv, 
 	char *user_input;
 	size_t nbytes;
 	ssize_t bytes_read;
-	char **commands;
+	char **commands, **path_array;
 
 	nbytes = 0;
 	while (1)
@@ -30,13 +33,16 @@ int main(__attribute__((unused)) int argc, __attribute__((unused)) char **argv, 
 		if (blank_check(user_input) == 1)
 			continue;
 
-		commands = parse_input(user_input);
+		path_array = get_path_array(env);
+		/* check for NULL path_array */
+		commands = parse_input(user_input, path_array);
 		fork_wait_exec(commands, env);
 
 		free_commands(commands);
-/*
-		free(user_input);
-*/
+
+		/*free(path_array);*/
+		/*path_array = NULL;*/
+		/*free(user_input);*/
 	}
 	return (0);
 }

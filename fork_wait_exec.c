@@ -6,6 +6,7 @@
  *
  * @commands: array of strings
  * commands[0] is command to execute
+ * @env: array of environment variables
  * remaining strings are arguments to use with that command
  */
 

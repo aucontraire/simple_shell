@@ -20,14 +20,16 @@ void fork_wait_exec(char **commands, char **env);
 void free_commands(char **commands);
 
 /* parse_input */
-char **parse_input(char *user_input);
+char **parse_input(char *user_input, char **path_array);
 
 /* string_helpers */
 int _strlen(char *str);
 char *_strcat(char *dest, char *src);
+char *_strdup(char *str);
 
 /* env_helpers */
 int get_path_count(char *path);
 char **get_path_array(char **env);
+char *find_path(char **path_array, char *token);
 
 #endif

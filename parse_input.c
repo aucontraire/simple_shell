@@ -3,14 +3,15 @@
 /**
  * parse_input - parsers user_input to create an array of strings
  * @user_input: string to tokenize
+ * @path_array: array of directories in PATH
  *
  * Return: an array of arguments
  */
 
-char **parse_input(char *user_input)
+char **parse_input(char *user_input, char **path_array)
 {
 	char **commands;
-	char *token;
+	char *token, *dir_path;
 	int args, i, length;
 
 	args = 1;
@@ -23,8 +24,15 @@ char **parse_input(char *user_input)
 	}
 
 	commands = malloc(sizeof(char *) * args + 1);
-
 	token = strtok(user_input, "\n ");
+
+	if (path_check(token) == -1)
+	{
+		dir_path = find_path(path_array, token);
+		if (dir_path != NULL)
+			token = dir_path;
+	}
+
 	length = _strlen(token);
 	commands[0] = malloc(sizeof(char) * length);
 	commands[0] = token;
