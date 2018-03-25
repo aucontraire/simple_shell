@@ -34,21 +34,14 @@ char **parse_input(char *user_input, char **path_array)
 			token = dir_path;
 	}
 
-/*	length = _strlen(token);
-	commands[0] = malloc(sizeof(char) * (length + 1)); */
 	commands[0] = _strdup(token);
-/*	commands[0][length] = '\0'; */
 
 	for (i = 1; i < args; i++)
 	{
 		token = strtok(NULL, "\n ");
-/*		length = _strlen(token);
-		commands[i] = malloc(sizeof(char) * (length + 1)); */
 		commands[i] = _strdup(token);
-/*		commands[i][length] = '\0'; */
 	}
 
-	commands[args] = NULL;
-
+	free(dir_path);
 	return (commands);
 }

@@ -47,7 +47,7 @@ char **get_path_array(char **env)
 		{
 			path = _strdup(env[i]);
 			path_count = get_path_count(path);
-			path_array = malloc(sizeof(char *) * path_count + 1);
+			path_array = malloc(sizeof(char *) * path_count);
 			if (path_array == NULL)
 				return (NULL);
 
@@ -67,8 +67,6 @@ char **get_path_array(char **env)
 		i++;
 	}
 
-	path_array[path_count] = NULL;
-
 	return (path_array);
 }
 
@@ -85,11 +83,14 @@ char *find_path(char **path_array, char *command)
 	int i, j, f_ok, dir_len, com_len, total_len;
 	char *path;
 
+	f_ok = 0;
+
 	i = 0;
 	while (path_array[i] != NULL)
 	{
 		dir_len = _strlen(path_array[i]);
 		com_len = _strlen(command);
+
 		total_len = dir_len + com_len + 2;
 
 		path = malloc(sizeof(char) * total_len);
@@ -108,7 +109,8 @@ char *find_path(char **path_array, char *command)
 			path[dir_len + j + 1] = command[j];
 			j++;
 		}
-		path[total_len] = '\0';
+		path[total_len - 1] = '\0';
+
 		f_ok = access(path, F_OK);
 		if (f_ok == 0)
 			return (path);

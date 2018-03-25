@@ -7,9 +7,9 @@
 
 void free_array(char **array)
 {
-	int i;
+	size_t i;
 
-	for (i = 0; array[i] != NULL; i++)
+	for (i = 0; array[i] != NULL ; i++)
 	{
 		free(array[i]);
 	}

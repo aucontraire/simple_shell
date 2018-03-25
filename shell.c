@@ -38,14 +38,12 @@ int main(__attribute__((unused)) int argc, char **argv, char **env)
 			continue;
 
 		path_array = get_path_array(env);
-		/* check for NULL path_array */
-
 		commands = parse_input(user_input, path_array);
 		fork_wait_exec(commands, env, NAME);
 
-		free_array(commands);
-
+/*		free_array(commands);
 		free_array(path_array);
+*/
 		free(path_array);
 
 	}
