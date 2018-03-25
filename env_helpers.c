@@ -67,6 +67,7 @@ char **get_path_array(char **env)
 		i++;
 	}
 
+	free(path);
 	return (path_array);
 }
 
@@ -117,5 +118,7 @@ char *find_path(char **path_array, char *command)
 
 		i++;
 	}
+
+	free(path);
 	return (NULL);
 }

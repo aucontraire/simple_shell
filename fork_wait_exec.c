@@ -39,10 +39,4 @@ void fork_wait_exec(char **commands, char **env, char *NAME)
 	}
 
 	wait(&status);
-/*
-	printf("done waiting, time to free\n");
-	free_array(commands);
-	printf("freed\n");
-*/
-
 }

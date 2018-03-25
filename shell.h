@@ -20,7 +20,7 @@ void fork_wait_exec(char **commands, char **env, char *NAME);
 void free_array(char **array);
 
 /* parse_input */
-char **parse_input(char *user_input, char **path_array);
+char **parse_input(char *user_input, char **path_array, char *NAME);
 
 /* string_helpers */
 int _strlen(char *str);
