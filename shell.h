@@ -12,6 +12,7 @@
 void exit_check(char *user_input);
 int blank_check(char *user_input);
 int path_check(char *command);
+int env_check(char *user_input);
 
 /* fork_wait_exec */
 void fork_wait_exec(char **commands, char **env);
@@ -31,5 +32,6 @@ char *_strdup(char *str);
 int get_path_count(char *path);
 char **get_path_array(char **env);
 char *find_path(char **path_array, char *token);
+void print_env(char **env);
 
 #endif
