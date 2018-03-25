@@ -49,3 +49,27 @@ int path_check(char *command)
 
 	return (-1);
 }
+
+/**
+ * env_check - checks if command is env
+ * @user_input: string to compare to 'env'
+ *
+ * Return: 1 if string is equal to 'env', otherwise 0
+ */
+
+int env_check(char *user_input)
+{
+	int i = 0;
+	char *env = "env";
+
+	if (_strlen(user_input) != 4)
+		return (0);
+
+	while (env[i] != '\0')
+	{
+		if (env[i] != user_input[i])
+			return (0);
+		i++;
+	}
+	return (1);
+}

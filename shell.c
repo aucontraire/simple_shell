@@ -37,11 +37,11 @@ int main(__attribute__((unused)) int argc, char **argv, char **env)
 		if (blank_check(user_input) == 1)
 			continue;
 
-		if (env_check == 1)
-{
-			printenv(env);
+		if (env_check(user_input) == 1)
+		{
+			print_env(env);
 			continue;
-}
+		}
 
 		path_array = get_path_array(env);
 		commands = parse_input(user_input, path_array, NAME);

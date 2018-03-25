@@ -122,3 +122,21 @@ char *find_path(char **path_array, char *command)
 	free(path);
 	return (NULL);
 }
+
+/**
+ * print_env - print environment variables
+ * @env: array of environment variables
+ */
+
+void print_env(char **env)
+{
+	int i;
+
+	i = 0;
+	while (env[i] != NULL)
+	{
+		write(STDOUT_FILENO, env[i], _strlen(env[i]));
+		write(STDOUT_FILENO, "\n", 1);
+		i++;
+	}
+}

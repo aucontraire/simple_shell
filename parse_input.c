@@ -37,7 +37,7 @@ char **parse_input(char *user_input, char **path_array, char *NAME)
 		}
 		else
 		{
-// print_error(NAME, token);
+			/*print_error(NAME, token);*/
 			perror(NAME);
 			free(dir_path);
 			free(commands);
