@@ -122,7 +122,6 @@ char *find_path(char **path_array, char *command)
 			free(path);
 	}
 
-	free(path);
 	return (NULL);
 }
 
