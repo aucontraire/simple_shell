@@ -45,9 +45,8 @@ int main(__attribute__((unused)) int argc, char **argv, char **env)
 		}
 
 		path_array = get_path_array(env);
-		commands = parse_input(user_input, path_array);
+		commands = parse_input(user_input, path_array, NAME);
 		fork_wait_exec(commands, env);
-
 		free_commands(commands);
 
 		/*free(path_array);*/

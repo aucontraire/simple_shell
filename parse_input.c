@@ -8,7 +8,7 @@
  * Return: an array of arguments
  */
 
-char **parse_input(char *user_input, char **path_array)
+char **parse_input(char *user_input, char **path_array, char *NAME)
 {
 	char **commands;
 	char *token, *dir_path;
@@ -37,6 +37,11 @@ char **parse_input(char *user_input, char **path_array)
 		dir_path = find_path(path_array, token);
 		if (dir_path != NULL)
 			token = dir_path;
+		else
+		{
+			perror(NAME);
+			return (NULL);
+		}
 	}
 
 	length = _strlen(token);
