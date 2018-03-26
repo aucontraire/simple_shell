@@ -43,6 +43,8 @@ char **parse_input(char *user_input, char **path_array, char *NAME)
 		else
 		{
 			perror(NAME);
+			free(dir_path);
+			free(commands);
 			return (NULL);
 		}
 	}
