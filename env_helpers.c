@@ -34,7 +34,7 @@ char **get_path_array(char **env)
 {
 	unsigned int i, j, path_count;
 	int compare;
-	char *token, *path, *duptoken;
+	char *token, *mypath;
 	char **path_array;
 
 	compare = 0;
@@ -45,20 +45,19 @@ char **get_path_array(char **env)
 		compare = strncmp(env[i], "PATH", 4);
 		if (compare == 0)
 		{
-			path = _strdup(env[i]);
-			path_count = get_path_count(path);
+			mypath = _strdup(env[i]);
+			path_count = get_path_count(mypath);
 			path_array = malloc(sizeof(char *) * (path_count + 1));
 			if (path_array == NULL)
 				return (NULL);
 
 
-			token = strtok(path, "=:");
+			token = strtok(mypath, "=:");
 			while (j < path_count)
 			{
 				if (token[0] != 'P')
 				{
-					duptoken = _strdup(token);
-					path_array[j] = duptoken;
+					path_array[j] = _strdup(token);
 					j++;
 				}
 				token = strtok(NULL, "=:");
@@ -69,7 +68,8 @@ char **get_path_array(char **env)
 
 	path_array[path_count] = '\0';
 
-	free(path);
+	free(mypath);
+
 	return (path_array);
 }
 
@@ -88,8 +88,7 @@ char *find_path(char **path_array, char *command)
 
 	f_ok = 0;
 
-	i = 0;
-	while (path_array[i] != NULL)
+	for (i = 0; path_array[i] != NULL; i++)
 	{
 		dir_len = _strlen(path_array[i]);
 		com_len = _strlen(command);
@@ -115,10 +114,12 @@ char *find_path(char **path_array, char *command)
 		path[total_len + 1] = '\0';
 
 		f_ok = access(path, F_OK);
+
 		if (f_ok == 0)
 			return (path);
 
-		i++;
+		else
+			free(path);
 	}
 
 	free(path);
