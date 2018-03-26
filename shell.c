@@ -16,12 +16,14 @@ int main(__attribute__((unused)) int argc, char **argv, char **env)
 	ssize_t bytes_read;
 	char **commands, **path_array;
 	static char *NAME;
+/*	int is_atty;*/
 
 	NAME = argv[0];
 	user_input = NULL;
 	nbytes = 0;
 	commands = NULL;
 	path_array = NULL;
+/*	is_atty = isatty( */
 
 	while (1)
 	{
