@@ -12,15 +12,20 @@ char **parse_input(char *user_input, char **path_array)
 {
 	char **commands;
 	char *token, *dir_path;
-	int args, i, length;
+	int args, i, length, start;
 
 	args = 1;
 	i = 0;
+	start = 0;
 	while (user_input[i] != '\0' && user_input[i] != '\n')
 	{
+		if (user_input[i] != ' ')
+			start = 1;
+
 		if (user_input[i] == ' ' && user_input[i + 1] != ' '
-		    && user_input[i + 1] != '\n')
+		    && user_input[i + 1] != '\n' && start == 1)
 			args++;
+
 		i++;
 	}
 
