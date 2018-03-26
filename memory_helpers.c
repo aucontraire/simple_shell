@@ -9,7 +9,7 @@ void free_array(char **array)
 {
 	size_t i;
 
-	for (i = 0; array[i] != NULL ; i++)
+	for (i = 0; array[i] != '\0'; i++)
 	{
 		free(array[i]);
 	}
