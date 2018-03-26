@@ -14,6 +14,7 @@ char **parse_input(char *user_input, char **path_array, char *NAME)
 	char *token, *dir_path;
 	int args, i, start;
 
+	dir_path = NULL;
 	args = 1;
 	i = 0;
 	start = 0;
@@ -37,17 +38,17 @@ char **parse_input(char *user_input, char **path_array, char *NAME)
 		if (dir_path != NULL)
 		{
 			commands[0] = _strdup(dir_path);
-			free(dir_path);
 		}
 		else
 		{
 			/*print_error(NAME, token);*/
-			perror(NAME);
 			free(dir_path);
 			free(commands);
 			free_array(path_array);
+			perror(NAME);
 			return (NULL);
 		}
+		free(dir_path);
 	}
 
 	else
