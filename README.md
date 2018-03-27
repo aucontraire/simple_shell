@@ -1,4 +1,4 @@
-![hella shell](https//imgur.com/J3h3A)
+![hella shell](https://ibb.co/jHHLVS)
 
 ## Table of Contents
 
