@@ -1,4 +1,4 @@
-hella_shell
+**hella_shell**
 
 ## Table of Contents
 
@@ -14,7 +14,7 @@ hella_shell
 
 ## Description
 
-hella_shell is a simple command line interpreter based on the Bash shell, written by Brian Fox in 1989. hella_shell is intentionally minimalistic and contains functionality for only the most basic shell tasks - accepting input, parsing the input into a command and its arguments, and executing that input. Error checking is simple and follows Bash conventions.
+**hella_shell** is a simple command line interpreter based on the Bash shell, written by Brian Fox in 1989. **hella_shell** is intentionally minimalistic and contains functionality for only the most basic shell tasks - accepting input, parsing the input into a command and its arguments, and executing that input. Error checking is simple and follows Bash conventions.
 
 ## Project Requirements
 	 * Must follow Betty style and document guidelines
@@ -80,8 +80,8 @@ hella_shell$ exit
 ### Non-Interactive Mode
 
 ```c
-~/me$ cat test.c | ./hsh
-this is a test file
+~/me$ cat hella_shell.txt | ./hsh
+because i'm feelin' hella good so let's just keep on shellin'
 ~/me$
 ```
 
@@ -92,7 +92,7 @@ At this time, there are no known bugs.
 
 ## Authors
 
-Lizzie Turner | GitHub | Twitter
+Lizzie Turner | [GitHub](github.com/lizzieturner) | [Twitter](twitter.com/_lizzieturner_)
 Omar Contreras | GitHub | Twitter
 
 ## License
