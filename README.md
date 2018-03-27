@@ -28,17 +28,18 @@
 ## File Structure
 
 * [AUTHORS](https://github.com/aucontraire/simple_shell/blob/docs/AUTHORS) - list of contributors
-* [check_helpers.c](https://github.com/aucontraire/simple_shell/blob/docs/check_helpers.c) - simple check functions 	  * exit_check - checks if user_input is `exit`
-* blank_check - checks if user_input is `\n`
-* env_check - checks if user_input is `env`
+* [check_helpers.c](https://github.com/aucontraire/simple_shell/blob/docs/check_helpers.c) - simple check functions
+  * exit_check - checks if user_input is `exit`
+  * blank_check - checks if user_input is `\n`
+  * env_check - checks if user_input is `env`
 * [env_helpers.c](env_helpers.c) - helper functions related to PATH and other environment variables
-	      	* `get_path_count` - gets count of path parts
-		* `get_path_array` - tokenizes path to 2d array
-		* `find_path` - finds and checks path for given command
-		* `print_env` - shell builtin that prints current environment
+  * `get_path_count` - gets count of path parts
+  * `get_path_array` - tokenizes path to 2d array
+  * `find_path` - finds and checks path for given command
+  * `print_env` - shell builtin that prints current environment
 * [error_helpers.c](error_helpers.c) - helper functions for error message printing
-		* `command_error` - command not found error
-		* `exec_error` - command could not execute error
+  * `command_error` - command not found error
+  * `exec_error` - command could not execute error
 * [fork_wait_exec.c](fork_wait_exec.c) - process and execution function
 * [free_array.c](free_array.c) - 2D array freeing function
 * [man_1_simple_shell](man_1_simple_shell) - manual page
@@ -46,9 +47,9 @@
 * [shell.c](shell.c) - main function
 * [shell.h](shell.h) - header file
 * [string_helpers.c](string_helpers.c) - helper functions pertaining to string handling
- * `_strlen` - finds length of a string
- * `_strcat` - concatenates two strings
- * `_strdup` - duplicates two strings (including memory management)
+  * `_strlen` - finds length of a string
+  * `_strcat` - concatenates two strings
+  * `_strdup` - duplicates two strings (including memory management)
 
 ## Compilation
 
