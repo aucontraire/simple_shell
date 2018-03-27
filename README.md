@@ -33,7 +33,6 @@ The purpose of the simple shell project is to understand:
 ## Requirements
 
 * Must follow [Betty](https://github.com/holbertonschool/Betty/wiki) style and document guidelines
-* Compiled as follows: `gcc -Wall -Wextra -Werror -pedantic -o hsh`
 * Allowed editors: `vi`, `vim`, `emacs`
 * Must have a `README.md` file
 * All header files must be include guarded
@@ -67,6 +66,7 @@ The purpose of the simple shell project is to understand:
 
 ## Compilation
 
+Must be GCC 4.8.4 or later  
 ```gcc -Wall -Wextra -Werror -pedantic *.c -o hsh```
 
 ## Usage Examples
