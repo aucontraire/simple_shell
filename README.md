@@ -66,8 +66,9 @@ The purpose of the simple shell project is to understand:
 
 ## Compilation
 
-Must be GCC 4.8.4 or later  
 ```gcc -Wall -Wextra -Werror -pedantic *.c -o hsh```
+
+*Must be GCC 4.8.4 or later*
 
 ## Usage Examples
 
