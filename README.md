@@ -3,14 +3,14 @@
 
 ## Table of Contents
 
-* [Description] (#description)
-* [Project Requirements] (#project-requirements)
-* [File Structure] (#file-structure)
-* [Usage] (#usage)
-* [Examples] (#examples)
-* [Bugs] (#bugs)
-* [Authors] (#authors)
-* [License] (#license)
+* [Description](#description)
+* [Project Requirements](#project-requirements)
+* [File Structure](#file-structure)
+* [Usage](#usage)
+* [Examples](#examples)
+* [Bugs](#bugs)
+* [Authors](#authors)
+* [License](#license)
 
 
 ## Description
@@ -26,14 +26,13 @@
 
 ## File Structure
 
-[AUTHORS](https://github.com/aucontraire/simple_shell/blob/docs/AUTHORS) - list of contributors  
-
-[check_helpers.c](https://github.com/aucontraire/simple_shell/blob/docs/check_helpers.c) - simple check functions  
+*[AUTHORS](https://github.com/aucontraire/simple_shell/blob/docs/AUTHORS) - list of contributors  
+*[check_helpers.c](https://github.com/aucontraire/simple_shell/blob/docs/check_helpers.c) - simple check functions  
 		* exit_check -  
 		* blank_check -  
 		* env_check -  
 
-[env_helpers.c] (env_helpers.c) - helper functions related to PATH and other environment variables
+[env_helpers.c](env_helpers.c) - helper functions related to PATH and other environment variables
 	      	* get_path_count -  
 		* get_path_array -  
 		* find_path -  
