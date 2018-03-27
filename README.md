@@ -1,3 +1,5 @@
+**hella_shell**
+
 ![hella shell](https://s31.postimg.org/403ix8w7f/j1_IPt_Uu_IS51_N62_LB5z9_Qhg_r.jpg)
 
 
@@ -85,10 +87,9 @@ At this time, there are no known bugs.
 
 ## Authors
 
-*Lizzie Turner* | [GitHub](github.com/lizzieturner) | [Twitter](twitter.com/_lizzieturner_)
-
-*Omar Contreras* | [GitHub](github.com/aucontraire) | [Twitter](twitter.com/_au_contraire)
+Lizzie Turner | [GitHub](github.com/lizzieturner) | [Twitter](twitter.com/_lizzieturner_)  
+Omar Contreras | [GitHub](github.com/aucontraire) | [Twitter](twitter.com/_au_contraire)
 
 ## License
 
-hella_shell is open source and free to download and use
+**hella_shell** is open source and free to download and use
