@@ -58,16 +58,17 @@ string_helpers.c - helper functions pertaining to string handling
 		 * _strcat - concatenates two strings
 		 * _strdup - duplicates two strings (including memory management)
 
-*Compilation*
+## Compilation
 
 GCC 4.8.6 or later
 
 gcc -Wall -Wextra -Werror -pedantic *.c -o hsh
 
-*Usage Examples*
-Interactive Mode
+## Usage Examples
 
-'''C
+### Interactive Mode
+
+'''c
 ~/user$ ./hsh
 hella_shell$ echo and the bunnymen
 hella_shell$ and the bunnymen
@@ -77,16 +78,16 @@ hella_shell$ exit
 ~/user$
 '''
 
-Non-Interactive Mode
+### Non-Interactive Mode
 
-'''C
+'''c
 ~/user$ cat "test.c" | ./hsh
 hella_shell$ this is a test file
 hella_shell$ isn't is nice
 ~/user$
 '''
 
-*Bugs*
+## Bugs
 
 At this time, there are no known bugs.
 
