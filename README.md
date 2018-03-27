@@ -3,13 +3,14 @@
 
 ## Table of Contents
 
-##### Description ##### Project Requirements
-##### File Structure
-##### Usage
-##### Examples
-##### Bugs
-##### Authors
-##### License
+* [Description] (#description)
+* [Project Requirements] (#project-requirements)
+* [File Structure] (#file-structure)
+* [Usage] (#usage)
+* [Examples] (#examples)
+* [Bugs] (#bugs)
+* [Authors] (#authors)
+* [License] (#license)
 
 
 ## Description
@@ -32,7 +33,7 @@
 		* blank_check -  
 		* env_check -  
 
-env_helpers.c - helper functions related to PATH and other environment variables
+[env_helpers.c] (env_helpers.c) - helper functions related to PATH and other environment variables
 	      	* get_path_count -  
 		* get_path_array -  
 		* find_path -  
