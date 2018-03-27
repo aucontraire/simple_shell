@@ -81,7 +81,7 @@ hella_shell$ exit
 
 ```c
 ~/me$ cat hella_shell.txt | ./hsh
-because i'm feelin' hella good so let's just keep on shellin'
+got me feelin' hella shell so let's just keep on codin'
 ~/me$
 ```
 
@@ -93,6 +93,7 @@ At this time, there are no known bugs.
 ## Authors
 
 Lizzie Turner | [GitHub](github.com/lizzieturner) | [Twitter](twitter.com/_lizzieturner_)
+
 Omar Contreras | GitHub | Twitter
 
 ## License
