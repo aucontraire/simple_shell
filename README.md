@@ -3,8 +3,7 @@
 
 ## Table of Contents
 
-##### Description
-##### Project Requirements
+##### Description ##### Project Requirements
 ##### File Structure
 ##### Usage
 ##### Examples
