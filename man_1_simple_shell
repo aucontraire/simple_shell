@@ -1,0 +1,24 @@
+.TH hsh 1 "March 28 2018" 1.0 "hella shell Manual"
+
+.SH NAME
+.B hella shell
+a simple command interpreter
+
+.SH SYNOPSIS
+
+
+.SH DESCRIPTION
+
+.SH INVOCATION
+
+.SH BUILTINS
+
+
+.SH KNOWN BUGS
+
+.SH AUTHORS
+Lizzie Turner <hello@lizzieturner.com>
+Omar Contreras <email>
+
+.SH SEE ALSO
+sh
