@@ -19,7 +19,7 @@
 
 ## Project Requirements
 
-* Must follow Betty style and document guidelines
+* Must follow Betty [style](https://github.com/holbertonschool/Betty/wiki#1-coding-style) and document guidelines
 * Compiled as follows:
 `gcc -Wall -Wextra -Werror -pedantic -o hsh`
 * Other requirement
