@@ -60,9 +60,7 @@ string_helpers.c - helper functions pertaining to string handling
 
 ## Compilation
 
-GCC 4.8.6 or later
-
-gcc -Wall -Wextra -Werror -pedantic *.c -o hsh
+```gcc -Wall -Wextra -Werror -pedantic *.c -o hsh
 
 ## Usage Examples
 
