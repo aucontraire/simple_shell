@@ -71,7 +71,7 @@ gcc -Wall -Wextra -Werror -pedantic *.c -o hsh
 ```c
 ~/user$ ./hsh
 hella_shell$ echo and the bunnymen
-hella_shell$ and the bunnymen
+and the bunnymen
 hella_shell$
 hella_shell$
 hella_shell$ exit
@@ -81,9 +81,8 @@ hella_shell$ exit
 ### Non-Interactive Mode
 
 ```
-~/user$ cat "test.c" | ./hsh
-hella_shell$ this is a test file
-hella_shell$ isn't is nice
+~/user$ cat test.c | ./hsh
+this is a test file
 ~/user$
 ```
 
@@ -95,7 +94,6 @@ At this time, there are no known bugs.
 ## Authors
 
 Lizzie Turner | GitHub | Twitter
-
 Omar Contreras | GitHub | Twitter
 
 ## License
