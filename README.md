@@ -6,7 +6,8 @@
 ## Table of Contents
 
 * [Description](#description)
-* [Project Requirements](#project-requirements)
+* [Purpose](#purpose)
+* [Requirements](#requirements)
 * [File Structure](#file-structure)
 * [Usage](#usage)
 * [Examples](#examples)
@@ -19,13 +20,24 @@
 
 **hella_shell** is a simple command line interpreter based on the Bash shell, written by Brian Fox in 1989. **hella_shell** is intentionally minimalistic and contains functionality for only the most basic shell tasks - accepting input, parsing the input into a command and its arguments, and executing that input. Error checking is simple and follows Bash conventions.
 
-## Project Requirements
+## Purpose
+
+The purpose of the simple shell project is to understand:
+* how a shell works
+* PID and PPIDs
+* how processes are created
+* the three prototypes of `main`
+* how the shell uses the `PATH` to find and execute programs
+* the `EOF`/"end-of-file" condition
+
+## Requirements
 
 * Must follow [Betty](https://github.com/holbertonschool/Betty/wiki) style and document guidelines
-* Compiled as follows:
-`gcc -Wall -Wextra -Werror -pedantic -o hsh`
-* Other requirement
-* Other requirement
+* Compiled as follows: `gcc -Wall -Wextra -Werror -pedantic -o hsh`
+* Allowed editors: `vi`, `vim`, `emacs`
+* Must have a `README.md` file
+* All header files must be include guarded
+* No more than 5 functions per files
 
 ## File Structure
 
