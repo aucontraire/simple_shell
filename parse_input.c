@@ -31,6 +31,11 @@ char **parse_input(char *user_input, char **path_array, char *NAME)
 	}
 
 	commands = malloc(sizeof(char *) * (args + 1));
+	if (commands == NULL)
+	{
+		free_array(path_array);
+		return (NULL);
+	}
 	token = strtok(user_input, "\n ");
 
 	if (path_check(token) == -1)
