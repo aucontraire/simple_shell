@@ -3,14 +3,14 @@
 
 ## Table of Contents
 
-#### Description
-#### Project Requirements
-#### File Structure
-#### Usage
-#### Examples
-#### Bugs
-#### Authors
-#### License
+##### Description
+##### Project Requirements
+##### File Structure
+##### Usage
+##### Examples
+##### Bugs
+##### Authors
+##### License
 
 
 ## Description
@@ -27,20 +27,21 @@
 ## File Structure
 
 [AUTHORS](https://github.com/aucontraire/simple_shell/blob/docs/AUTHORS) - list of contributors  
+
 [check_helpers.c](https://github.com/aucontraire/simple_shell/blob/docs/check_helpers.c) - simple check functions  
 		* exit_check -  
 		* blank_check -  
 		* env_check -  
 
 env_helpers.c - helper functions related to PATH and other environment variables
-	      	* get_path_count -
-		* get_path_array -
-		* find_path -
-		* print_env -
+	      	* get_path_count -  
+		* get_path_array -  
+		* find_path -  
+		* print_env -   
 
 error_helpers.c - helper functions for error message printing
-		* command_error -
-		* exec_error -
+		* command_error -  
+		* exec_error -  
 
 fork_wait_exec.c - process and execution function
 
