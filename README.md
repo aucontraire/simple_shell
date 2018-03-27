@@ -1,6 +1,6 @@
 hella_shell
 
-#Table of Contents
+# Table of Contents
 
 Description
 Project Requirements
@@ -12,7 +12,7 @@ Authors
 License
 
 
-*Description*
+**Description**
 
 hella_shell is a simple command line interpreter based on the Bash shell, written by Brian Fox in 1989. hella_shell is intentionally minimalistic and contains functionality for only the most basic shell tasks - accepting input, parsing the input into a command and its arguments, and executing that input. Error checking is simple and follows Bash conventions.
 
