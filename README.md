@@ -85,9 +85,9 @@ At this time, there are no known bugs.
 
 ## Authors
 
-Lizzie Turner | [GitHub](github.com/lizzieturner) | [Twitter](twitter.com/_lizzieturner_)
+*Lizzie Turner* | [GitHub](github.com/lizzieturner) | [Twitter](twitter.com/_lizzieturner_)
 
-Omar Contreras | GitHub | Twitter
+*Omar Contreras* | [GitHub](github.com/aucontraire) | [Twitter](twitter.com/_au_contraire)
 
 ## License
 
