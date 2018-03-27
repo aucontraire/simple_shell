@@ -1,29 +1,29 @@
 hella_shell
 
-# Table of Contents
+## Table of Contents
 
-Description
-Project Requirements
-File Structure
-Usage
-Examples
-Bugs
-Authors
-License
+#### Description
+#### Project Requirements
+#### File Structure
+#### Usage
+#### Examples
+#### Bugs
+#### Authors
+#### License
 
 
-**Description**
+## Description
 
 hella_shell is a simple command line interpreter based on the Bash shell, written by Brian Fox in 1989. hella_shell is intentionally minimalistic and contains functionality for only the most basic shell tasks - accepting input, parsing the input into a command and its arguments, and executing that input. Error checking is simple and follows Bash conventions.
 
-*Project Requirements*
+## Project Requirements
 	 * Must follow Betty style and document guidelines
 	 * Compiled as follows:
 	   	    gcc -Wall -Wextra -Werror -pedantic -o hsh
          * Other requirement
 	 * Other requirement
 
-*File Structure*
+## File Structure
 
 AUTHORS - list of contributors
 check_helpers.c - simple check functions
@@ -68,7 +68,7 @@ gcc -Wall -Wextra -Werror -pedantic *.c -o hsh
 
 ### Interactive Mode
 
-'''c
+'''
 ~/user$ ./hsh
 hella_shell$ echo and the bunnymen
 hella_shell$ and the bunnymen
@@ -80,7 +80,7 @@ hella_shell$ exit
 
 ### Non-Interactive Mode
 
-'''c
+'''
 ~/user$ cat "test.c" | ./hsh
 hella_shell$ this is a test file
 hella_shell$ isn't is nice
@@ -92,11 +92,11 @@ hella_shell$ isn't is nice
 At this time, there are no known bugs.
 
 
-*Authors*
+## Authors
 
 Lizzie Turner | GitHub | Twitter
 Omar Contreras | GitHub | Twitter
 
-*License*
+## License
 
 hella_shell is open source and free to download and use
