@@ -53,7 +53,7 @@ int main(__attribute__((unused)) int argc, char **argv, char **env)
 
 		if (commands != NULL)
 		{
-			fork_wait_exec(commands, env, NAME);
+			fork_wait_exec(commands, path_array, env, NAME, user_input);
 			free_array(commands);
 			free_array(path_array);
 		}

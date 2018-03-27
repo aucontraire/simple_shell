@@ -16,9 +16,10 @@ int env_check(char *user_input);
 
 /* error_helpers */
 void command_error(char *NAME, char *command);
+void exec_error(char *NAME, char *command);
 
 /* fork_wait_exec */
-void fork_wait_exec(char **commands, char **env, char *NAME);
+void fork_wait_exec(char **commands, char **path_array, char **env, char *NAME, char *user_input);
 
 /* memory_helpers */
 void free_array(char **array);
