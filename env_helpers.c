@@ -83,11 +83,11 @@ char **get_path_array(char **env)
 
 char *find_path(char **path_array, char *command)
 {
-	int i, j, f_ok, dir_len, com_len, total_len;
+	int i, j, ok_f, ok_x, dir_len, com_len, total_len;
 	char *path;
 
-	f_ok = 0;
-
+	ok_f = 0;
+	ok_x = 0;
 	for (i = 0; path_array[i] != NULL; i++)
 	{
 		dir_len = _strlen(path_array[i]);
@@ -113,13 +113,20 @@ char *find_path(char **path_array, char *command)
 		}
 		path[total_len + 1] = '\0';
 
-		f_ok = access(path, F_OK);
+		ok_f = access(path, F_OK);
+		ok_x = access(path, X_OK);
 
-		if (f_ok == 0)
-			return (path);
-
-		else
-			free(path);
+		if (ok_f == 0)
+		{
+			if (ok_x == 0)
+				return (path);
+			else
+			{
+				free(path);
+				return ("no_access");
+			}
+		}
+		free(path);
 	}
 
 	return (NULL);

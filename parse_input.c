@@ -4,6 +4,7 @@
  * parse_input - parsers user_input to create an array of strings
  * @user_input: string to tokenize
  * @path_array: array of directories in PATH
+ * @NAME: name of program
  *
  * Return: an array of arguments
  */
@@ -35,17 +36,24 @@ char **parse_input(char *user_input, char **path_array, char *NAME)
 	if (path_check(token) == -1)
 	{
 		dir_path = find_path(path_array, token);
-		if (dir_path != NULL)
+		if (strcmp("no_access", dir_path) == 0)
 		{
-			commands[0] = _strdup(dir_path);
-			free(dir_path);
+			free(commands);
+			free_array(path_array);
+			access_error(NAME, token);
+			return (NULL);
 		}
-		else
+		else if (dir_path == NULL)
 		{
 			free(commands);
 			free_array(path_array);
 			command_error(NAME, token);
 			return (NULL);
+		}
+		else
+		{
+			commands[0] = _strdup(dir_path);
+			free(dir_path);
 		}
 	}
 
