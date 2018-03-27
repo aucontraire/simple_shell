@@ -69,21 +69,22 @@ gcc -Wall -Wextra -Werror -pedantic *.c -o hsh
 ### Interactive Mode
 
 ```c
-~/user$ ./hsh
+~/me$ ./hsh
 hella_shell$ echo and the bunnymen
 and the bunnymen
-hella_shell$
+hella_shell$ pwd
+/home/me/hella_shell
 hella_shell$
 hella_shell$ exit
-~/user$
+~/me$
 ```
 
 ### Non-Interactive Mode
 
-```
-~/user$ cat test.c | ./hsh
+```c
+~/me$ cat test.c | ./hsh
 this is a test file
-~/user$
+~/me$
 ```
 
 ## Bugs
