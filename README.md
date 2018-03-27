@@ -19,7 +19,7 @@
 
 ## Project Requirements
 
-* Must follow Betty [style](https://github.com/holbertonschool/Betty/wiki#1-coding-style) and document guidelines
+* Must follow [Betty](https://github.com/holbertonschool/Betty/wiki) style and document guidelines
 * Compiled as follows:
 `gcc -Wall -Wextra -Werror -pedantic -o hsh`
 * Other requirement
@@ -27,39 +27,28 @@
 
 ## File Structure
 
-[AUTHORS](https://github.com/aucontraire/simple_shell/blob/docs/AUTHORS) - list of contributors  
-
-*[check_helpers.c](https://github.com/aucontraire/simple_shell/blob/docs/check_helpers.c) - simple check functions  
-											  * exit_check -  
-		* blank_check -  
-		* env_check -  
-
-[env_helpers.c](env_helpers.c) - helper functions related to PATH and other environment variables
-	      	* get_path_count -  
-		* get_path_array -  
-		* find_path -  
-		* print_env -   
-
-[error_helpers.c](error_helpers.c) - helper functions for error message printing
-		* command_error -  
-		* exec_error -  
-
-[fork_wait_exec.c](fork_wait_exec.c) - process and execution function
-
-[free_array.c](free_array.c) - 2D array freeing function
-
-[man_1_simple_shell](man_1_simple_shell) - manual page
-
-[parse_input.c](parse_input.c) - command and argument parsing function
-
-[shell.c](shell.c) - main function
-
-[shell.h](shell.h) - header file
-
-[string_helpers.c](string_helpers.c) - helper functions pertaining to string handling
-		 * _strlen - finds length of a string
-		 * _strcat - concatenates two strings
-		 * _strdup - duplicates two strings (including memory management)
+*[AUTHORS](https://github.com/aucontraire/simple_shell/blob/docs/AUTHORS) - list of contributors
+*[check_helpers.c](https://github.com/aucontraire/simple_shell/blob/docs/check_helpers.c) - simple check functions 	  * exit_check -
+* blank_check -
+* env_check -
+*[env_helpers.c](env_helpers.c) - helper functions related to PATH and other environment variables
+	      	* get_path_count -
+		* get_path_array -
+		* find_path -
+		* print_env -
+*[error_helpers.c](error_helpers.c) - helper functions for error message printing
+		* command_error -
+		* exec_error -
+*[fork_wait_exec.c](fork_wait_exec.c) - process and execution function
+*[free_array.c](free_array.c) - 2D array freeing function
+*[man_1_simple_shell](man_1_simple_shell) - manual page
+*[parse_input.c](parse_input.c) - command and argument parsing function
+*[shell.c](shell.c) - main function
+*[shell.h](shell.h) - header file
+*[string_helpers.c](string_helpers.c) - helper functions pertaining to string handling
+ * _strlen - finds length of a string
+ * _strcat - concatenates two strings
+ * _strdup - duplicates two strings (including memory management)
 
 ## Compilation
 
