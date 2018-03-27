@@ -76,8 +76,8 @@ The purpose of the simple shell project is to understand:
 
 ```c
 ~/me$ ./hsh
-hella_shell$ echo and the bunnymen
-and the bunnymen
+hella_shell$ echo & the bunnymen
+& the bunnymen
 hella_shell$ pwd
 /home/me/hella_shell
 hella_shell$
