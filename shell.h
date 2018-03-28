@@ -28,6 +28,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 void free_array(char **array);
 
 /* parse_input */
+int arg_counter(char *user_input);
 char **parse_input(char *user_input, char **path_array, char *NAME, int atty);
 
 /* string_helpers */
