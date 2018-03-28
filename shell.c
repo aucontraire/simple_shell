@@ -22,7 +22,7 @@ int main(__attribute__((unused)) int argc, char **argv, char **env)
 	commands = NULL;
 	path_array = NULL;
 
-/*	signal(SIGINT, SIG_IGN); */
+	signal(SIGINT, SIG_IGN);
 
 	while (1)
 	{
@@ -31,7 +31,10 @@ int main(__attribute__((unused)) int argc, char **argv, char **env)
 
 		bytes_read = getline(&user_input, &nbytes, stdin);
 		if (bytes_read == -1)
+		{
+			write(STDOUT_FILENO, "\n", 1);
 			exit(2);
+		}
 
 		if (bytes_read == 5)
 			exit_check(user_input);
