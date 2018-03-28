@@ -9,6 +9,9 @@
 #include <sys/wait.h>
 #include <signal.h>
 
+extern int exitcode;
+/* extern int errorcount; */
+
 /* check_helpers */
 int exit_check(char *user_input, char *NAME);
 int blank_check(char *user_input);

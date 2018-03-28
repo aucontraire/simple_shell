@@ -57,6 +57,7 @@ char **parse_input(char *user_input, char **path_array, char *NAME, int atty)
 			free(commands);
 			free_array(path_array);
 			command_error(NAME, token, atty);
+			exitcode = 127;
 			return (NULL);
 		}
 		else if (_strcmp("no_access", dir_path) == 0)
@@ -64,6 +65,7 @@ char **parse_input(char *user_input, char **path_array, char *NAME, int atty)
 			free(commands);
 			free_array(path_array);
 			access_error(NAME, token);
+			exitcode = 126;
 			return (NULL);
 		}
 		commands[0] = _strdup(dir_path);

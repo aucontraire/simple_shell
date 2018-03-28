@@ -1,5 +1,7 @@
 #include "shell.h"
 
+int exitcode = 0;
+
 /**
  * main - a simple shell program written in C
  * @argc: number of arguments
@@ -28,7 +30,7 @@ int main(__attribute__((unused)) int argc, char **argv, char **env)
 		if (bytes_read == -1)
 		{
 			free(user_input);
-			exit(0);
+			exit(exitcode);
 		}
 		if (exit_check(user_input, NAME) == -1)
 			continue;

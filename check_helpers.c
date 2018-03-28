@@ -41,6 +41,7 @@ int exit_check(char *user_input, char *NAME)
 			{
 				exit_error(NAME, user_input);
 				free(number);
+				exitcode = 128;
 				return (-1);
 			}
 		}

@@ -24,6 +24,7 @@ void command_error(char *NAME, char *command, int atty)
 		write(STDOUT_FILENO, ": not found", 12);
 	}
 
+	exitcode = 127;
 }
 
 /**
