@@ -5,6 +5,7 @@
  * @user_input: string to tokenize
  * @path_array: array of directories in PATH
  * @NAME: name of program
+ * @atty: denotes interactive or non-interactive mode
  *
  * Return: an array of arguments
  */
