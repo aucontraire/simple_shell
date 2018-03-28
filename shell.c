@@ -24,10 +24,10 @@ int main(__attribute__((unused)) int argc, char **argv, char **env)
 	{
 		if (atty_is)
 			write(STDOUT_FILENO, "hella_shell$ ", 13);
+
 		bytes_read = getline(&user_input, &nbytes, stdin);
 		if (bytes_read == -1)
 		{
-			write(STDOUT_FILENO, "\n", 1);
 			free(user_input);
 			exit(2);
 		}
