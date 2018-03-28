@@ -9,7 +9,7 @@
  * Return: an array of arguments
  */
 
-char **parse_input(char *user_input, char **path_array, char *NAME)
+char **parse_input(char *user_input, char **path_array, char *NAME, int atty)
 {
 	char **commands;
 	char *token, *dir_path;
@@ -46,7 +46,7 @@ char **parse_input(char *user_input, char **path_array, char *NAME)
 		{
 			free(commands);
 			free_array(path_array);
-			command_error(NAME, token);
+			command_error(NAME, token, atty);
 			return (NULL);
 		}
 		else if (_strcmp("no_access", dir_path) == 0)
