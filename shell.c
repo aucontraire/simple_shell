@@ -22,6 +22,8 @@ int main(__attribute__((unused)) int argc, char **argv, char **env)
 	commands = NULL;
 	path_array = NULL;
 
+/*	signal(SIGINT, SIG_IGN); */
+
 	while (1)
 	{
 		if (atty_is)
