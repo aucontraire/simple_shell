@@ -23,7 +23,6 @@ int exit_check(char *user_input, char *NAME)
 		if (check[i] != user_input[i])
 			return (0);
 	}
-
 	if (user_input[4] != '\n' && user_input[4] != ' ')
 		return (0);
 

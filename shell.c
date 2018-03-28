@@ -1,6 +1,7 @@
 #include "shell.h"
 
 int exitcode = 0;
+int errorcount = 0;
 
 /**
  * main - a simple shell program written in C
@@ -24,6 +25,7 @@ int main(__attribute__((unused)) int argc, char **argv, char **env)
 	signal(SIGINT, SIG_IGN);
 	while (1)
 	{
+		errorcount++;
 		if (atty_is)
 			write(STDOUT_FILENO, "hella_shell$ ", 13);
 		bytes_read = getline(&user_input, &nbytes, stdin);
@@ -42,7 +44,7 @@ int main(__attribute__((unused)) int argc, char **argv, char **env)
 			continue;
 		}
 		path_array = get_path_array(env);
-		commands = parse_input(user_input, path_array, NAME, atty_is);
+		commands = parse_input(user_input, path_array, NAME);
 		if (commands != NULL)
 		{
 			fork_wait_exec(commands, path_array, env, NAME, user_input);

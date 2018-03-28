@@ -10,7 +10,7 @@
 #include <signal.h>
 
 extern int exitcode;
-/* extern int errorcount; */
+extern int errorcount;
 
 /* check_helpers */
 int exit_check(char *user_input, char *NAME);
@@ -19,7 +19,7 @@ int path_check(char *command);
 int env_check(char *user_input);
 
 /* error_helpers */
-void command_error(char *NAME, char *command, int atty);
+void command_error(char *NAME, char *command);
 void exec_error(char *NAME, char *command);
 void access_error(char *NAME, char *command);
 void exit_error(char *NAME, char *user_input);
@@ -31,15 +31,19 @@ void fork_wait_exec(char **commands, char **path_array,
 /* memory_helpers */
 void free_array(char **array);
 
+/* number_helpers */
+int _atoi(char *s);
+void print_number(int n);
+
 /* parse_input */
 int arg_counter(char *user_input);
-char **parse_input(char *user_input, char **path_array, char *NAME, int atty);
+char **parse_input(char *user_input, char **path_array, char *NAME);
 
 /* string_helpers */
 int _strlen(char *str);
 int _strcmp(char *s1, char *s2);
 char *_strdup(char *str);
-int _atoi(char *s);
+int _putchar(char c);
 
 /* env_helpers */
 int get_path_count(char *path);

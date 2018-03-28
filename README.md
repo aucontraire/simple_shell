@@ -59,6 +59,9 @@ The purpose of the simple shell project is to understand:
 * [memory_helpers.c](memory_helpers.c) - helper functions related to memory management
   * `free_array` - 2D array freeing function
 * [man_1_simple_shell](man_1_simple_shell) - manual page
+* [number_helpers.c](number_helpers.c) - helper functions pertaining to integers
+  * `_atoi` - turns a numerical string into an integer
+  * `print_number` - prints an integer to standard output
 * [parse_input.c](parse_input.c) - command and argument parsing function
 * [shell.c](shell.c) - main function
 * [shell.h](shell.h) - header file
@@ -66,7 +69,7 @@ The purpose of the simple shell project is to understand:
   * `_strlen` - finds length of a string
   * `_strcmp` - compares two strings
   * `_strdup` - duplicates two strings (including memory management)
-  * `_atoi` - turns a numerical string into an integer
+  * `_putchar` - writes a single character to standard output
 
 ## Compilation
 

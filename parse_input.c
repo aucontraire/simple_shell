@@ -31,12 +31,11 @@ int arg_counter(char *user_input)
  * @user_input: string to tokenize
  * @path_array: array of directories in PATH
  * @NAME: name of program
- * @atty: denotes interactive or non-interactive mode
  *
  * Return: an array of arguments
  */
 
-char **parse_input(char *user_input, char **path_array, char *NAME, int atty)
+char **parse_input(char *user_input, char **path_array, char *NAME)
 {
 	char **commands, *token, *dir_path = NULL;
 	int args = 1, i = 0;
@@ -56,7 +55,7 @@ char **parse_input(char *user_input, char **path_array, char *NAME, int atty)
 		{
 			free(commands);
 			free_array(path_array);
-			command_error(NAME, token, atty);
+			command_error(NAME, token);
 			exitcode = 127;
 			return (NULL);
 		}

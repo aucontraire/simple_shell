@@ -4,25 +4,17 @@
  * command_error - prints error message when command is not found
  * @NAME: name of program
  * @command: command not found
- * @atty: denotes interactive or non-interactive mode
  *
  */
 
-void command_error(char *NAME, char *command, int atty)
+void command_error(char *NAME, char *command)
 {
-	if (atty)
-	{
-		write(STDOUT_FILENO, command, _strlen(command));
-		write(STDOUT_FILENO, ": command not found\n", 20);
-	}
-
-	else
-	{
-		write(STDOUT_FILENO, NAME, _strlen(NAME));
-		write(STDOUT_FILENO, ": 1: ", 5);
-		write(STDOUT_FILENO, command, _strlen(command));
-		write(STDOUT_FILENO, ": not found", 12);
-	}
+	write(STDOUT_FILENO, NAME, _strlen(NAME));
+	write(STDOUT_FILENO, ": ", 2);
+	print_number(errorcount);
+	write(STDOUT_FILENO, ": ", 2);
+	write(STDOUT_FILENO, command, _strlen(command));
+	write(STDOUT_FILENO, ": not found\n", 13);
 
 	exitcode = 127;
 }
@@ -65,11 +57,13 @@ void exit_error(char *NAME, char *user_input)
 {
 	char *token;
 
-	token = strtok(user_input, "/n ");
+	token = strtok(user_input, "\n ");
 	token = strtok(NULL, "\n ");
 
 	write(STDOUT_FILENO, NAME, _strlen(NAME));
-	write(STDOUT_FILENO, ": 1: exit: Illegal number: ", 27);
+	write(STDOUT_FILENO, ": ", 2);
+	print_number(errorcount);
+	write(STDOUT_FILENO, ": ", 2);
 	write(STDOUT_FILENO, token, _strlen(token));
 	write(STDOUT_FILENO, "\n", 1);
 }
