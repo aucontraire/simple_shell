@@ -38,13 +38,9 @@ int arg_counter(char *user_input)
 
 char **parse_input(char *user_input, char **path_array, char *NAME, int atty)
 {
-	char **commands;
-	char *token, *dir_path;
-	int args, i;
+	char **commands, *token, *dir_path = NULL;
+	int args = 1, i = 0;
 
-	dir_path = NULL;
-	args = 1;
-	i = 0;
 	args = arg_counter(user_input);
 	commands = malloc(sizeof(char *) * (args + 1));
 	if (commands == NULL)
@@ -70,11 +66,8 @@ char **parse_input(char *user_input, char **path_array, char *NAME, int atty)
 			access_error(NAME, token);
 			return (NULL);
 		}
-		else
-		{
-			commands[0] = _strdup(dir_path);
-			free(dir_path);
-		}
+		commands[0] = _strdup(dir_path);
+		free(dir_path);
 	}
 	else
 		commands[0] = _strdup(token);
