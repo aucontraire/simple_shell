@@ -17,23 +17,18 @@ int exit_check(char *user_input)
 	length = _strlen(user_input);
 	size = length - 5;
 	status = 0;
-
 	for (i = 0; i < 4; i++)
 	{
 		if (check[i] != user_input[i])
 			return (0);
 	}
-
 	if (length < 5 || length > 9)
 		return (0);
-
 	if (user_input[4] != '\n' && user_input[4] != ' ')
 		return (0);
-
 	if (length > 5)
 	{
 		number = malloc(sizeof(char) * size);
-
 		for (i = 5; i < length - 1; i++)
 		{
 			if (user_input[i] >= '0' && user_input[i] <= '9')
@@ -41,21 +36,17 @@ int exit_check(char *user_input)
 				number[j] = user_input[i];
 				j++;
 			}
-
 			else
 			{
 				write(STDOUT_FILENO, "invalid exit code\n", 18);
 				free(number);
 				return (-1);
 			}
-
 		}
-
 		number[j] = '\0';
 		status = _atoi(number);
 		free(number);
 	}
-
 	free(user_input);
 	exit(status);
 }
