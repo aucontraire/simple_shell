@@ -21,7 +21,8 @@ void exec_error(char *NAME, char *command);
 void access_error(char *NAME, char *command);
 
 /* fork_wait_exec */
-void fork_wait_exec(char **commands, char **path_array, char **env, char *NAME, char *user_input);
+void fork_wait_exec(char **commands, char **path_array,
+		    char **env, char *NAME, char *user_input);
 
 /* memory_helpers */
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
