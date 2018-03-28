@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * parse_input - parsers user_input to create an array of strings
+ * parse_input - parses user_input to create an array of strings
  * @user_input: string to tokenize
  * @path_array: array of directories in PATH
  * @NAME: name of program
