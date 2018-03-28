@@ -36,8 +36,8 @@ int main(__attribute__((unused)) int argc, char **argv, char **env)
 			exit(2);
 		}
 
-		if (bytes_read == 5)
-			exit_check(user_input);
+		if (exit_check(user_input) == -1)
+			continue;
 
 		if (blank_check(user_input) == 1)
 			continue;

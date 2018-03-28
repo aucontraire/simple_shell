@@ -66,6 +66,7 @@ The purpose of the simple shell project is to understand:
   * `_strlen` - finds length of a string
   * `_strcmp` - compares two strings
   * `_strdup` - duplicates two strings (including memory management)
+  * '_atoi' - turns a numerical string into an integer
 
 ## Compilation
 

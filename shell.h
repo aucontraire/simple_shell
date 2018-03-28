@@ -10,7 +10,7 @@
 #include <signal.h>
 
 /* check_helpers */
-void exit_check(char *user_input);
+int exit_check(char *user_input);
 int blank_check(char *user_input);
 int path_check(char *command);
 int env_check(char *user_input);
@@ -34,6 +34,7 @@ char **parse_input(char *user_input, char **path_array, char *NAME, int atty);
 int _strlen(char *str);
 int _strcmp(char *s1, char *s2);
 char *_strdup(char *str);
+int _atoi(char *s);
 
 /* env_helpers */
 int get_path_count(char *path);
