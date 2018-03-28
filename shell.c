@@ -16,7 +16,6 @@ int main(__attribute__((unused)) int argc, char **argv, char **env)
 	char **path_array = NULL;
 	size_t nbytes = 0;
 	ssize_t bytes_read = 0;
-	char **commands, **path_array;
 	char *NAME = argv[0];
 	int atty_is = isatty(0);
 
