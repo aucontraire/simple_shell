@@ -21,7 +21,7 @@ void command_error(char *NAME, char *command, int atty)
 		write(STDOUT_FILENO, NAME, _strlen(NAME));
 		write(STDOUT_FILENO, ": 1: ", 5);
 		write(STDOUT_FILENO, command, _strlen(command));
-		write(STDOUT_FILENO, ": not found\n", 12);
+		write(STDOUT_FILENO, ": not found", 12);
 	}
 
 }
