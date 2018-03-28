@@ -28,6 +28,7 @@ int main(__attribute__((unused)) int argc, char **argv, char **env)
 		if (bytes_read == -1)
 		{
 			write(STDOUT_FILENO, "\n", 1);
+			free(user_input);
 			exit(2);
 		}
 		if (exit_check(user_input) == -1)
