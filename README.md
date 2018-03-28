@@ -42,9 +42,9 @@ The purpose of the simple shell project is to understand:
 
 * [AUTHORS](https://github.com/aucontraire/simple_shell/blob/docs/AUTHORS) - list of contributors
 * [check_helpers.c](https://github.com/aucontraire/simple_shell/blob/docs/check_helpers.c) - helper functions that check for builtins
-  * 'exit_check' - checks if user_input is `exit`
-  * 'blank_check' - checks if user_input is `\n`
-  * 'env_check' - checks if user_input is `env`
+  * `exit_check` - checks if user_input is `exit`
+  * `blank_check` - checks if user_input is `\n`
+  * `env_check` - checks if user_input is `env`
 * [env_helpers.c](env_helpers.c) - helper functions related to PATH and other environment variables
   * `get_path_count` - gets count of path parts
   * `get_path_array` - tokenizes path to 2d array
@@ -53,11 +53,11 @@ The purpose of the simple shell project is to understand:
 * [error_helpers.c](error_helpers.c) - helper functions that print appropriate error messages
   * `command_error` - command not found error
   * `exec_error` - command could not execute error
-  * 'access_error' - user does not have permission to execute command
+  * `access_error` - user does not have permission to execute command
 * [fork_wait_exec.c](fork_wait_exec.c) - process and execution function
 * [memory_helpers.c](memory_helpers.c) - helper functions related to memory management
-  * '_realloc' - memory reallocation function
-  * 'free_array' - 2D array freeing function
+  * `_realloc - memory reallocation function
+  * `free_array` - 2D array freeing function
 * [man_1_simple_shell](man_1_simple_shell) - manual page
 * [parse_input.c](parse_input.c) - command and argument parsing function
 * [shell.c](shell.c) - main function
