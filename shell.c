@@ -28,7 +28,7 @@ int main(__attribute__((unused)) int argc, char **argv, char **env)
 		if (bytes_read == -1)
 		{
 			free(user_input);
-			exit(1);
+			exit(0);
 		}
 		if (exit_check(user_input, NAME) == -1)
 			continue;
