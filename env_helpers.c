@@ -136,11 +136,8 @@ char *find_path(char **path_array, char *command)
 		{
 			if (ok_x == 0)
 				return (path);
-			else
-			{
-				free(path);
-				return ("no_access");
-			}
+			free(path);
+			return ("no_access");
 		}
 		free(path);
 	}
