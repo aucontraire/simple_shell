@@ -56,7 +56,7 @@ The purpose of the simple shell project is to understand:
   * `access_error` - user does not have permission to execute command
 * [fork_wait_exec.c](fork_wait_exec.c) - process and execution function
 * [memory_helpers.c](memory_helpers.c) - helper functions related to memory management
-  * `_realloc - memory reallocation function
+  * `_realloc` - memory reallocation function
   * `free_array` - 2D array freeing function
 * [man_1_simple_shell](man_1_simple_shell) - manual page
 * [parse_input.c](parse_input.c) - command and argument parsing function
