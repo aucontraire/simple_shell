@@ -3,11 +3,12 @@
 /**
  * exit_check - checks if user input is "exit" and, if so, exits the shell
  * @user_input: string to compare to "exit"
+ * @NAME: name of program
  *
  * Return: 0 if not exit, -1 if exit has an invalid status attached
  */
 
-int exit_check(char *user_input)
+int exit_check(char *user_input, char *NAME)
 {
 	int i, j, length, size, status;
 	char *number;
@@ -38,7 +39,7 @@ int exit_check(char *user_input)
 			}
 			else
 			{
-				write(STDOUT_FILENO, "invalid exit code\n", 18);
+				exit_error(NAME, user_input);
 				free(number);
 				return (-1);
 			}

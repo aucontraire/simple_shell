@@ -52,3 +52,23 @@ void access_error(char *NAME, char *command)
 	write(STDOUT_FILENO, command, _strlen(command));
 	write(STDOUT_FILENO, ": Permission denied\n", 20);
 }
+
+
+/**
+ * exit_error - prints message if user inputs an invalid exit status
+ * @NAME: name of program
+ * @user_input: user input read by program
+ */
+
+void exit_error(char *NAME, char *user_input)
+{
+	char *token;
+
+	token = strtok(user_input, "/n ");
+	token = strtok(NULL, "\n ");
+
+	write(STDOUT_FILENO, NAME, _strlen(NAME));
+	write(STDOUT_FILENO, ": 1: exit: Illegal number: ", 27);
+	write(STDOUT_FILENO, token, _strlen(token));
+	write(STDOUT_FILENO, "\n", 1);
+}

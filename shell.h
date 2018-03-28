@@ -10,7 +10,7 @@
 #include <signal.h>
 
 /* check_helpers */
-int exit_check(char *user_input);
+int exit_check(char *user_input, char *NAME);
 int blank_check(char *user_input);
 int path_check(char *command);
 int env_check(char *user_input);
@@ -19,6 +19,7 @@ int env_check(char *user_input);
 void command_error(char *NAME, char *command, int atty);
 void exec_error(char *NAME, char *command);
 void access_error(char *NAME, char *command);
+void exit_error(char *NAME, char *user_input);
 
 /* fork_wait_exec */
 void fork_wait_exec(char **commands, char **path_array,

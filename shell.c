@@ -31,7 +31,7 @@ int main(__attribute__((unused)) int argc, char **argv, char **env)
 			free(user_input);
 			exit(2);
 		}
-		if (exit_check(user_input) == -1)
+		if (exit_check(user_input, NAME) == -1)
 			continue;
 		if (blank_check(user_input) == 1)
 			continue;

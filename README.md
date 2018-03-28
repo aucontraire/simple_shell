@@ -54,6 +54,7 @@ The purpose of the simple shell project is to understand:
   * `command_error` - command not found error
   * `exec_error` - command could not execute error
   * `access_error` - user does not have permission to execute command
+  * `exit_error` - user has entered an invalid exit code
 * [fork_wait_exec.c](fork_wait_exec.c) - process and execution function
 * [memory_helpers.c](memory_helpers.c) - helper functions related to memory management
   * `_realloc` - memory reallocation function
