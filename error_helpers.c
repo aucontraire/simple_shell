@@ -25,10 +25,9 @@ void command_error(char *NAME, char *command)
  * @command: name of command
  */
 
-void exec_error(char *NAME, char *command)
+void exec_error(__attribute__((unused))char *NAME, char *command)
 {
 	perror(command);
-
 	exitcode = 2;
 }
 
