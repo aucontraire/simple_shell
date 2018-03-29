@@ -26,10 +26,10 @@ Prints all of the environment variables
 .RE
 
 .B exit
+[\fIEXIT_STATUS\fR]
 .RS 6
 Exits the shell with an optional integer exit status
 .RE
-
 
 .SH NOTES
 Currently, the program does not support the following commands:
