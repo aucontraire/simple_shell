@@ -27,8 +27,6 @@ void command_error(char *NAME, char *command)
 
 void exec_error(char *NAME, char *command)
 {
-	write(STDERR_FILENO, NAME, _strlen(NAME));
-	write(STDERR_FILENO, ": ", 2);
 	perror(command);
 
 	exitcode = 2;
