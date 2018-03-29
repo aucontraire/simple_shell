@@ -9,12 +9,12 @@
 
 void command_error(char *NAME, char *command)
 {
-	write(STDOUT_FILENO, NAME, _strlen(NAME));
-	write(STDOUT_FILENO, ": ", 2);
+	write(STDERR_FILENO, NAME, _strlen(NAME));
+	write(STDERR_FILENO, ": ", 2);
 	print_number(errorcount);
-	write(STDOUT_FILENO, ": ", 2);
-	write(STDOUT_FILENO, command, _strlen(command));
-	write(STDOUT_FILENO, ": not found\n", 13);
+	write(STDERR_FILENO, ": ", 2);
+	write(STDERR_FILENO, command, _strlen(command));
+	write(STDERR_FILENO, ": not found\n", 13);
 
 	exitcode = 127;
 }
@@ -27,8 +27,8 @@ void command_error(char *NAME, char *command)
 
 void exec_error(char *NAME, char *command)
 {
-	write(STDOUT_FILENO, NAME, _strlen(NAME));
-	write(STDOUT_FILENO, ": ", 2);
+	write(STDERR_FILENO, NAME, _strlen(NAME));
+	write(STDERR_FILENO, ": ", 2);
 	perror(command);
 }
 
@@ -40,10 +40,10 @@ void exec_error(char *NAME, char *command)
 
 void access_error(char *NAME, char *command)
 {
-	write(STDOUT_FILENO, NAME, _strlen(NAME));
-	write(STDOUT_FILENO, ": ", 2);
-	write(STDOUT_FILENO, command, _strlen(command));
-	write(STDOUT_FILENO, ": Permission denied\n", 20);
+	write(STDERR_FILENO, NAME, _strlen(NAME));
+	write(STDERR_FILENO, ": ", 2);
+	write(STDERR_FILENO, command, _strlen(command));
+	write(STDERR_FILENO, ": Permission denied\n", 20);
 }
 
 
@@ -60,10 +60,10 @@ void exit_error(char *NAME, char *user_input)
 	token = strtok(user_input, "\n ");
 	token = strtok(NULL, "\n ");
 
-	write(STDOUT_FILENO, NAME, _strlen(NAME));
-	write(STDOUT_FILENO, ": ", 2);
+	write(STDERR_FILENO, NAME, _strlen(NAME));
+	write(STDERR_FILENO, ": ", 2);
 	print_number(errorcount);
-	write(STDOUT_FILENO, ": ", 2);
-	write(STDOUT_FILENO, token, _strlen(token));
-	write(STDOUT_FILENO, "\n", 1);
+	write(STDERR_FILENO, ": ", 2);
+	write(STDERR_FILENO, token, _strlen(token));
+	write(STDERR_FILENO, "\n", 1);
 }
