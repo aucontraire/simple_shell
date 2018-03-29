@@ -30,6 +30,8 @@ void exec_error(char *NAME, char *command)
 	write(STDERR_FILENO, NAME, _strlen(NAME));
 	write(STDERR_FILENO, ": ", 2);
 	perror(command);
+
+	exitcode = 2;
 }
 
 /**
@@ -44,6 +46,8 @@ void access_error(char *NAME, char *command)
 	write(STDERR_FILENO, ": ", 2);
 	write(STDERR_FILENO, command, _strlen(command));
 	write(STDERR_FILENO, ": Permission denied\n", 20);
+
+
 }
 
 
