@@ -63,7 +63,7 @@ void exit_error(char *NAME, char *user_input)
 	write(STDERR_FILENO, NAME, _strlen(NAME));
 	write(STDERR_FILENO, ": ", 2);
 	print_number(errorcount);
-	write(STDERR_FILENO, ": ", 2);
+	write(STDERR_FILENO, ": Illegal number: ", 18);
 	write(STDERR_FILENO, token, _strlen(token));
 	write(STDERR_FILENO, "\n", 1);
 }
