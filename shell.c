@@ -21,8 +21,20 @@ int main(__attribute__((unused)) int argc, char **argv, char **env)
 	ssize_t bytes_read = 0;
 	char *NAME = argv[0];
 	int atty_is = isatty(0);
+	char *filename = "splash_screen.txt";
+	FILE *fptr = NULL;
 
 	signal(SIGINT, SIG_IGN);
+
+	// display splash screen
+	if((fptr = fopen(filename,"r")) == NULL)
+	{
+		fprintf(stderr,"error opening %s\n",filename);
+		return 1;
+	}
+	display_splash_screen(fptr);
+	fclose(fptr);
+
 	while (1)
 	{
 		errorcount++;

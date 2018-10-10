@@ -51,4 +51,7 @@ char **get_path_array(char **env);
 char *find_path(char **path_array, char *token);
 void print_env(char **env);
 
+/* splash screen */
+void display_splash_screen(FILE *file_ptr);
+
 #endif
